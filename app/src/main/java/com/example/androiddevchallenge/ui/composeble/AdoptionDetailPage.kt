@@ -1,13 +1,27 @@
+/*
+ * Copyright 2021 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.example.androiddevchallenge.ui.composeble
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Button
@@ -38,8 +52,9 @@ fun AdoptionDetail(adoptionInfo: AdoptionInfo) {
             .verticalScroll(
                 rememberScrollState(0),
             )
-            .fillMaxWidth()) {
-        TopBar()
+            .fillMaxWidth()
+    ) {
+        TopBar("Puppy Detail")
         Image(
             painter = painterResource(id = adoptionInfo.puppy.picture),
             contentDescription = "",
@@ -58,25 +73,28 @@ fun AdoptionDetail(adoptionInfo: AdoptionInfo) {
         BlockInfo(label = "Contact Information", content = contactInfo)
 
         Button(
-            modifier = Modifier.padding(top = 50.dp,bottom = 50.dp),
+            modifier = Modifier.padding(top = 50.dp, bottom = 50.dp),
             colors = ButtonDefaults.buttonColors(
                 MyTheme.colors.accent,
                 MyTheme.colors.welcomeText
             ),
             onClick = {
-
-            }) {
+            }
+        ) {
             Text(
                 text = "Adopt now",
             )
         }
     }
-
 }
 
 @Composable
 fun BlockInfo(label: String, content: String) {
-    Column(Modifier.padding(20.dp).fillMaxWidth()) {
+    Column(
+        Modifier
+            .padding(20.dp)
+            .fillMaxWidth()
+    ) {
         Row {
             Divider(
                 Modifier.width(4.dp),

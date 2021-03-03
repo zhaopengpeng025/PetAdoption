@@ -16,7 +16,6 @@
 package com.example.androiddevchallenge.ui.theme
 
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.colorspace.ColorSpaces
 
 val transparent = Color(0x00000000)
 

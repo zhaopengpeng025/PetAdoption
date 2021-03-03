@@ -1,3 +1,18 @@
+/*
+ * Copyright 2021 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.example.androiddevchallenge.ui.composeble
 
 import androidx.compose.animation.core.animateFloatAsState
@@ -23,7 +38,6 @@ import com.example.androiddevchallenge.ui.theme.MyTheme
 import com.example.androiddevchallenge.ui.theme.transparent
 import com.example.androiddevchallenge.ui.theme.white
 
-
 @Preview
 @Composable
 fun FilterLayout() {
@@ -36,7 +50,7 @@ fun FilterLayout() {
             else -> 2f
         }
     )
-    Column (modifier = Modifier.background(color = MyTheme.colors.primary)){
+    Column(modifier = Modifier.background(color = MyTheme.colors.primary)) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -44,7 +58,7 @@ fun FilterLayout() {
             FilterItem(
                 Modifier
                     .weight(1f)
-                    .clickable { viewModel.filterPuppyList(0)  },
+                    .clickable { viewModel.filterPuppyList(0) },
                 "All",
                 current == 0
             )
@@ -58,13 +72,13 @@ fun FilterLayout() {
             FilterItem(
                 Modifier
                     .weight(1f)
-                    .clickable { viewModel.filterPuppyList(2)},
+                    .clickable { viewModel.filterPuppyList(2) },
                 "Girl",
                 current == 2
             )
         }
         Divider(
-            modifier = Modifier.fillMaxWidth((1/3f))
+            modifier = Modifier.fillMaxWidth((1 / 3f))
                 .percentOffsetX(startOffset),
             color = MyTheme.colors.filter,
             thickness = 4.dp
@@ -79,7 +93,7 @@ fun FilterItem(modifier: Modifier = Modifier, text: String = "", selected: Boole
         modifier = modifier
             .fillMaxWidth()
             .height(50.dp)
-            .background(color = if(selected) MyTheme.colors.selected else transparent),
+            .background(color = if (selected) MyTheme.colors.selected else transparent),
         contentAlignment = Alignment.Center
     ) {
         Text(
