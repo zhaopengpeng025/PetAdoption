@@ -1,7 +1,8 @@
 package com.example.androiddevchallenge.data
 
 import com.example.androiddevchallenge.R
-import java.util.*
+import java.util.Date
+
 
 enum class Gender {
     Boy,Girl
@@ -27,7 +28,7 @@ data class User(
 
 data class AdoptionInfo(
     var puppy: Puppy,
-    var issueDate:Date = Date(),
+    var issueDate: Date = Date(),
     var location:String,
     var condition:String,
     var contact:User
